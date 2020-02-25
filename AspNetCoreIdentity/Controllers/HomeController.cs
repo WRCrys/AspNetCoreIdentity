@@ -44,6 +44,12 @@ namespace AspNetCoreIdentity.Controllers
             return View("Secret");
         }
 
+        [Authorize(Policy = "PodeEscrever")]
+        public IActionResult SecretClaimEscrever()
+        {
+            return View("Secret");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

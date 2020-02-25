@@ -1,4 +1,6 @@
 ﻿using AspNetCoreIdentity.Areas.Identity.Data;
+using AspNetCoreIdentity.Extensions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -13,7 +15,13 @@ namespace AspNetCoreIdentity.Config
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("PodeExcluir", policy => policy.RequireClaim("PodeExcluir"));
+
+                options.AddPolicy("PodeLer", policy => policy.Requirements.Add(new PermissaoNecessaria("PodeLer")));
+
+                options.AddPolicy("PodeEscrever", policy => policy.Requirements.Add(new PermissaoNecessaria("PodeEscrever")));
             });
+
+            services.AddSingleton<IAuthorizationHandler,PermissaoNecessariaHandler>();
 
             return services;
         }
