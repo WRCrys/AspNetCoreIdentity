@@ -48,6 +48,7 @@ namespace AspNetCoreIdentity
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
             }
             else
             {
@@ -59,9 +60,9 @@ namespace AspNetCoreIdentity
 
             app.UseRouting();
 
-            app.UseAuthorization();
-
             app.UseAuthentication();
+
+            app.UseAuthorization();            
 
             app.UseEndpoints(endpoints =>
             {
