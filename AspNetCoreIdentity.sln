@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29418.71
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreIdentity", "AspNetCoreIdentity\AspNetCoreIdentity.csproj", "{8036123B-22CE-4878-A04A-F9226B36D023}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreIdentity", "AspNetCoreIdentity\AspNetCoreIdentity.csproj", "{257F5FB2-48D3-41D3-88E8-A393AA112B54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8036123B-22CE-4878-A04A-F9226B36D023}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8036123B-22CE-4878-A04A-F9226B36D023}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8036123B-22CE-4878-A04A-F9226B36D023}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8036123B-22CE-4878-A04A-F9226B36D023}.Release|Any CPU.Build.0 = Release|Any CPU
+		{257F5FB2-48D3-41D3-88E8-A393AA112B54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{257F5FB2-48D3-41D3-88E8-A393AA112B54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{257F5FB2-48D3-41D3-88E8-A393AA112B54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{257F5FB2-48D3-41D3-88E8-A393AA112B54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {3A390948-38EA-42D9-A3FF-57BCB49A8AD4}
+		SolutionGuid = {E112E6F3-A87D-41C6-B7C8-7625ED5AB58D}
 	EndGlobalSection
 EndGlobal
