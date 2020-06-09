@@ -1,4 +1,5 @@
 using AspNetCoreIdentity.Config;
+using AspNetCoreIdentity.Extensions;
 using KissLog.Apis.v1.Listeners;
 using KissLog.AspNetCore;
 using Microsoft.AspNetCore.Builder;
@@ -33,7 +34,9 @@ namespace AspNetCoreIdentity
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddControllersWithViews(options => {
+                options.Filters.Add(typeof(AuditoriaFilter));
+            });
 
             services.AddIdentity(Configuration);
 
