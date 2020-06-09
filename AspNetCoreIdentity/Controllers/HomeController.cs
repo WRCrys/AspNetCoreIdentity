@@ -1,22 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.AspNetCore.Mvc;
 using AspNetCoreIdentity.Models;
 using Microsoft.AspNetCore.Authorization;
 using AspNetCoreIdentity.Extensions;
+using KissLog;
+using System;
 
 namespace AspNetCoreIdentity.Controllers
 {
+    /*
+    * Working with Kisslogs
+    * 
+    * WARNING!!
+    * Microsoft and Kisslog hava a same name to ILogger
+    */
+
     [Authorize]
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger logger)
         {
             _logger = logger;
         }
@@ -24,6 +27,7 @@ namespace AspNetCoreIdentity.Controllers
         [AllowAnonymous]
         public IActionResult Index()
         {
+            _logger.Trace("Usuário acessou a Home");
             return View();
         }
 
@@ -68,6 +72,7 @@ namespace AspNetCoreIdentity.Controllers
                     modelError.Mensagem = "Ocorreu um erro! Tente novamente mais tarde ou contate nosso suporte.";
                     modelError.Titulo = "Ocorreu um erro";
                     modelError.ErrorCode = id;
+                    _logger.Error(modelError);
                     break;
 
                 case 404:
@@ -75,12 +80,14 @@ namespace AspNetCoreIdentity.Controllers
                                           "com o nosso suporte.";
                     modelError.Titulo = "Ops! Página não encontrada.";
                     modelError.ErrorCode = id;
+                    _logger.Error(modelError);
                     break;
 
                 case 403:
                     modelError.Mensagem = "Você não tem permissão para fazer isso.";
                     modelError.Titulo = "Acesso Negado";
                     modelError.ErrorCode = id;
+                    _logger.Error(modelError);
                     break;
 
                 default:
